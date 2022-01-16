@@ -1,0 +1,43 @@
+
+body {
+    color: white;
+    position:fixed; 
+    height:100%; 
+    width:100%;
+    background-color:rgb(34, 28, 66);
+    margin: 0%;
+ 
+}
+
+#loginUser{
+
+    position: fixed;
+    bottom: 50%;
+    left: 20%;
+    width: 300px;
+    text-align: center;
+
+}
+
+#loginAdmin{
+  position: fixed;
+  bottom: 50%;
+  right: 20%;
+  width: 300px;
+  text-align: center;
+  
+//   border: 1px solid #73AD21;
+
+}
+
+.vertical {
+    border-left: 2px solid black;
+    height: 200px;
+    position:absolute;
+    left: 50%;
+    top: 20%;
+}
+
+h1{
+    color: rgb(189, 27, 76);
+}
