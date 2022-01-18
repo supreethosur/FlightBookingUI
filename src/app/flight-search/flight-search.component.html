@@ -1,63 +1,18 @@
 <!DOCTYPE html>
 
 
-<!-- <body>
-    <header class="HeaderSearch">
-        <div id="Header_container">
-            <div class="column">
-                <img src="src\app\flight-search\Images\Logo.jpg">
-            </div>
-            <div class="column">
-                <form class="SearchFields">
-                        <div class="trip_Type">
-                            <label for="tripType">Trip Type </label><br>
-                            <select id="tripType">
-                                <option *ngFor="let trip of trip_Type" [value]="trip">
-                                    {{trip}}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="fromLocation">
-                            <label for="fromLocation">From location </label><br>
-                            <input type="text" id="fromLocation">
-                        </div>
-                        <div class="toLocation">
-                            <label for="toLocation">To Location</label><br>
-                            <input type="text" id="toLocation">
-                        </div>
-                        <div class="fromDate">
-                            <label for="fromDate">From Date </label><br>
-                            <input type="date" id="fromDate">
-                        </div>
-                        <div>
-                            <label for="toDate">To Date</label><br>
-                            <input type="date" id="toDate">
-                        </div>
-                </form>
-            </div>
-            <div class="column">
-                <div>
-                    <button class="searchbtn">Search</button>
-                </div>
-            </div>
-        </div>
-    </header>
-</body>
 
-</html> -->
 <html>
+<!-- <body> -->
+<section class="HeaderSearch">
 
-<body>
-    <header class="HeaderSearch">
-        
-        <div class="column" id="logo">
-            <img src="..\..\Images\logo.jpg">
-        </div>
-
-        <div class="column"  id="searchFields">
+    <div class="column" id="logo">
+        <img src="..\..\Images\logo.jpg">
+    </div>
+    <form class="column" [formGroup]="searchForm" id="searchFields" (submit)="getFlights(tripType.value,fromLocation.value,toLocation.value,fromDate.value,returnDate.value)">
             <div class="trip_Type">
                 <label for="tripType">Trip Type </label><br>
-                <select id="tripType">
+                <select id="tripType" #tripType >
                     <option *ngFor="let trip of trip_Type" [value]="trip">
                         {{trip}}
                     </option>
@@ -65,26 +20,47 @@
             </div>
             <div class="fromLocation">
                 <label for="fromLocation">From location </label><br>
-                <input type="text" id="fromLocation">
+                <input type="text" id="fromLocation" #fromLocation formControlName="fromLocation">
             </div>
             <div class="toLocation">
                 <label for="toLocation">To Location</label><br>
-                <input type="text" id="toLocation">
+                <input type="text" id="toLocation" #toLocation formControlName="toLocation">
             </div>
             <div class="fromDate">
                 <label for="fromDate">From Date </label><br>
-                <input type="date" id="fromDate">
+                <input type="date" id="fromDate" #fromDate formControlName="startDate">
             </div>
             <div>
                 <label for="toDate">To Date</label><br>
-                <input type="date" id="toDate">
+                <input type="date" id="toDate" #returnDate formControlName="returnDate">
             </div>
+            <div class="column" id="searchButton">
+                <button class="searchbtn">Search</button>
+            </div>
+    </form>
+    
+</section>
+<!-- </body> -->
+
+
+<body>
+    <div *ngFor="let flight of flightList" class="listingCard">
+        <div class="flightData" id="airline">
+            {{flight.getairline()}}
         </div>
-        
-        <div class="column" id="searchButton">
-            <button class="searchbtn">Search</button>
+        <div class="flightData" id="flightName">
+            {{flight.getflightName()}}
         </div>
-    </header>
+        <div class="flightData" id="fromLocation">
+            {{flight.getfromLocation()}}
+        </div>
+        <div class="flightData" id="toLocation">
+            {{flight.gettoLocation()}}
+        </div>
+        <input type="radio" value="1" name="1">
+    </div>
+
+
 </body>
 
 </html>

@@ -1,10 +1,16 @@
+// *{
+// margin: 0;
+// padding: 0;
+// box-sizing: border-box;
+// }
+
 
 body {
     color: white;
     position:fixed; 
     height:100%; 
     width:100%;
-    background-color:rgb(34, 28, 66);
+    background-color:rgb(96, 95, 99);
     margin: 0%;
  
 }
@@ -13,7 +19,7 @@ body {
 
     position: fixed;
     bottom: 50%;
-    left: 20%;
+    left: 10%;
     width: 300px;
     text-align: center;
 
@@ -22,7 +28,7 @@ body {
 #loginAdmin{
   position: fixed;
   bottom: 50%;
-  right: 20%;
+  right: 10%;
   width: 300px;
   text-align: center;
   
@@ -39,5 +45,12 @@ body {
 }
 
 h1{
-    color: rgb(189, 27, 76);
+    color: rgb(231, 131, 161);
+}
+
+
+.error{
+    color: red;
+    position: relative;
+    
 }

@@ -1,77 +1,30 @@
+body {
+  color: white;
+  position:fixed; 
+  height:100%; 
+  width:100%;
+  background-color:rgb(218, 217, 224);
+  margin: 0%;
 
-// body{
-//   background-color: black ;
-//   margin: 0px;
-// }
-// header{
-//   height: 80px;
-//   background-color: white;
-// }
-// #Header_container{
-//   width: 80%;
-//   margin: auto;
-// }
+}
 
-// .column{
-//   background-color: red;
-//   float: left;
-//   width: 33%;
-// }
-
-// .SearchFields {
-//   width: 80%;
-//   display: inline;
-// }
-////////////////////////////
-
-// body{
-//   background-color: black;
-// }
-
-
-// #Header_container{
-//   display: flex;
-//   height: 50px;
-//   display: flex;
-// }
-
-// .SearchFields{
-//   display: flex; 
-//   color: blue;
-//   background-color: burlywood;
-// }
-
-
-// .searchbtn{
-//   background-color: green;
-// align-content: center;
-// }
-
-
-header{
+section{
   background-color: orange;
   width: 100%;
   
-}
-// body{
-//   background-color: black;
-//   width: 100%;
-//   height: 100%;
-// }
-// .column{
-//   height: 100%;
-//   width: 100%;
-//   background-color: rgb(167, 243, 14);
-//   text-align: center;
-// }
-.trip_Type,.fromLocation,.toLocation,.fromDate,.toDate{
-
-  width: 100%;
   
 }
 .HeaderSearch{
   display: inline-flex;
+  
 }
+
+.trip_Type,.fromLocation,.toLocation,.fromDate,.toDate,.searchButton{
+
+  width: 100%;
+  
+}
+
 
 #logo{
   background-color: rgb(31, 31, 73);
@@ -80,14 +33,38 @@ header{
 #searchFields{
   color: white;
   background-color: rgb(31, 31, 73);
-  width: 75%;
+  width: 90%;
   display: inline-flex;
 }
 #searchButton{
   background-color: rgb(167, 14, 14);
-  width: 15%;
-  text-align: center;
+  color: green;
+  // width: 15%;
+  // text-align: center;
+  // background: green;
+  
 }
 button{
   border-radius: 40px;
+}
+
+////////////////////////////////////////
+.listingCard{
+  padding: 16px 20px;
+  background: rgb(94, 195, 235);
+  border-top: 8px solid #e5eef5;
+  border-radius: 2px;
+  position: relative;
+  width: 50%;
+  display: inline-flex;
+} 
+
+
+
+.flightData {
+  
+  border-color: black; 
+  // border-style: solid;
+  // border-radius: 8px;
+  padding: 20px;
 }
