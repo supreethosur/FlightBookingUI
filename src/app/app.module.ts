@@ -8,12 +8,17 @@ import { LoginComponent } from './login/login.component';
 import { UserFlightDisplayComponent } from './user-flight-display/user-flight-display.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
-
-
+import { PassengerComponent } from './passenger/passenger.component';
+import { HttpClientModule } from "@angular/common/http";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ScrollingModule} from  '@angular/cdk/scrolling';
+import { SubmitFlightComponent } from './submit-flight/submit-flight.component';
 const routes:Routes = [
   { path: "Login", component: LoginComponent },
   { path: "FlightSearch/:userId", component: FlightSearchComponent },
-  { path: "UserFlightDisplay/:userId", component: UserFlightDisplayComponent },
+  { path: "passenger/:jsonValue", component: PassengerComponent },
+  { path: "UserFlightDisplay", component: UserFlightDisplayComponent },
+  { path: "submit/:pnr", component: SubmitFlightComponent},
   { path: "**", redirectTo: "Login" }
 ]
 
@@ -22,13 +27,18 @@ const routes:Routes = [
     AppComponent,
     FlightSearchComponent,
     LoginComponent,
-    UserFlightDisplayComponent
+    UserFlightDisplayComponent,
+    PassengerComponent,
+    SubmitFlightComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule, 
+    BrowserAnimationsModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

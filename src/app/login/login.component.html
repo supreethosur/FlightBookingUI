@@ -21,7 +21,7 @@
         </span>
         <br/>
        
-        <button [disabled] ="loginForm.invalid">Register & Continue</button>
+        <button    [disabled] ="loginForm.invalid">Register & Continue</button>
     </form>
 
 
@@ -44,26 +44,6 @@
         
     </form>
 
-    <form class="login" id="loginUser"  (submit)="getLogin(username.value,emailId.value)">
-        <h2>User </h2>
-        <label for="username"> Name</label><br>
-        <input type="text" id="username" #username />
-       
-        <br/>
-        <label for="emailId"> E-MailId</label><br>
-        <input type="text" id="emailId" #emailId formControlName="emailId"/>
-        
-        <br/>
-        <!-- <button disabled="loginForm.controls['username'].errors || loginForm.controls['emailId'].errors">Register & Continue</button> -->
-        <button>Register & Continue</button>
-    </form>
-
-
-
-
-
-
-  
     <div class = "vertical"></div>
 </body>
 
