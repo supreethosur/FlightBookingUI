@@ -13,12 +13,16 @@ import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ScrollingModule} from  '@angular/cdk/scrolling';
 import { SubmitFlightComponent } from './submit-flight/submit-flight.component';
+import { AdminComponent } from './admin/admin.component';
+import { InboxComponent } from './inbox/inbox.component';
 const routes:Routes = [
   { path: "Login", component: LoginComponent },
   { path: "FlightSearch/:userId", component: FlightSearchComponent },
   { path: "passenger/:jsonValue", component: PassengerComponent },
   { path: "UserFlightDisplay", component: UserFlightDisplayComponent },
   { path: "submit/:pnr", component: SubmitFlightComponent},
+  { path: "admin/", component: AdminComponent},
+  { path: "inbox/:userId", component: InboxComponent},
   { path: "**", redirectTo: "Login" }
 ]
 
@@ -29,7 +33,9 @@ const routes:Routes = [
     LoginComponent,
     UserFlightDisplayComponent,
     PassengerComponent,
-    SubmitFlightComponent
+    SubmitFlightComponent,
+    AdminComponent,
+    InboxComponent
   ],
   imports: [
     BrowserModule,

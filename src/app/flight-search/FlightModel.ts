@@ -1,121 +1,53 @@
 export class FlightModel{
 
-    private _flightId: Number;
-    public get flightId(): Number {
-        return this._flightId;
-    }
-    public set flightId(value: Number) {
-        this._flightId = value;
-    }
+    public flightId: Number;
+   
   
-	private _journeyId: Number;
-    public get journeyId(): Number {
-        return this._journeyId;
-    }
-    public set journeyId(value: Number) {
-        this._journeyId = value;
-    }
-    
-	private _flightName: String; 
-    public get flightName(): String {
-        return this._flightName;
-    }
-    public set flightName(value: String) {
-        this._flightName = value;
-    }
+	public journeyId: Number;
    
-	private _airline: String;
-    public get airline(): String {
-        return this._airline;
-    }
-    public set airline(value: String) {
-        this._airline = value;
-    }
+    
+	public flightName: String; 
+   
+   
+	public airline: String;
+    
     
    
-	private _departureDate: String;
-    public get departureDate(): String {
-        return this._departureDate;
-    }
-    public set departureDate(value: String) {
-        this._departureDate = value;
-    }
+	public departureDate: String;
+    
    
-	private _departureTime: String;
-    public get departureTime(): String {
-        return this._departureTime;
-    }
-    public set departureTime(value: String) {
-        this._departureTime = value;
-    }
+	public departureTime: String;
     
-	private _arrivalDate: String;
-    public get arrivalDate(): String {
-        return this._arrivalDate;
-    }
-    public set arrivalDate(value: String) {
-        this._arrivalDate = value;
-    }
     
-	private _arrivalTime: String;
-    public get arrivalTime(): String {
-        return this._arrivalTime;
-    }
-    public set arrivalTime(value: String) {
-        this._arrivalTime = value;
-    }
+	public arrivalDate: String;
     
-	private _fromLocation: String;
-    public get fromLocation(): String {
-        return this._fromLocation;
-    }
-    public set fromLocation(value: String) {
-        this._fromLocation = value;
-    }
     
-	private _toLocation: String;
-    public get toLocation(): String {
-        return this._toLocation;
-    }
-    public set toLocation(value: String) {
-        this._toLocation = value;
-    }
+	public arrivalTime: String;
     
-	private _businessSeats: Number;
-    public get businessSeats(): Number {
-        return this._businessSeats;
-    }
-    public set businessSeats(value: Number) {
-        this._businessSeats = value;
-    }
     
-	private _nonBusinessSeats: Number;
-    public get nonBusinessSeats(): Number {
-        return this._nonBusinessSeats;
-    }
-    public set nonBusinessSeats(value: Number) {
-        this._nonBusinessSeats = value;
-    }
+	public fromLocation: String;
     
-	private _scheduleType: String;
-    public get scheduleType(): String {
-        return this._scheduleType;
-    }
-    public set scheduleType(value: String) {
-        this._scheduleType = value;
-    }
     
-	private _amount: Number;
-    public get amount(): Number {
-        return this._amount;
-    }
-    public set amount(value: Number) {
-        this._amount = value;
-    }
+	public toLocation: String;
+    
+    
+	public businessSeats: Number;
+    
+    
+	public nonBusinessSeats: Number;
+    
+    
+	public scheduleType: String;
+    
+    
+	public amount: Number;
+    
     
 
 
-constructor(airline: String,fromLocation: String,toLocation :String,flightName :String ,journeyId :Number,departureDate:String,departureTime:String,arrivalDate:String,arrivalTime:String,businessSeats:Number,nonBusinessSeats:Number,amount:Number){
+constructor(airline: String,fromLocation: String,toLocation :String,flightName :String ,journeyId :Number,
+    departureDate:String,departureTime:String,arrivalDate:String,arrivalTime:String,
+    businessSeats:Number,nonBusinessSeats:Number,amount:Number,scheduleType: String){
         this.airline=airline;
         this.fromLocation=fromLocation;
         this.toLocation=toLocation;
@@ -128,6 +60,7 @@ constructor(airline: String,fromLocation: String,toLocation :String,flightName :
         this.businessSeats=businessSeats;
         this.nonBusinessSeats=nonBusinessSeats;
         this.amount=amount;
+        this.scheduleType=scheduleType;
     }
 
 

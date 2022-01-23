@@ -19,7 +19,7 @@ export class PassangerService{
     
 
     savePassangerDetails(passengerModel :PassangerModel):Observable<TicketDetailsModel> {
-        
+        console.log(JSON.stringify(passengerModel))
         return this.http.post<TicketDetailsModel>("http://localhost:8081/addPassanger",passengerModel);
     }
 

@@ -2,10 +2,14 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { userModel } from "../Models/userModel";
 import { Observable } from "rxjs";
+import { adminModel } from "../Models/adminModel";
 
 
 @Injectable({"providedIn": "root"})
 export class UserService{
+    adminLogin(admin: adminModel) {
+        return this.http.post("localhost:8084/authenticate", admin);
+    }
 
 
     constructor(private http:HttpClient){}

@@ -135,7 +135,7 @@ export class FlightSearchComponent implements OnInit {
     this.journeyIpModel.journeyDate=this.selectedDepartureDate;
     this.journeyInputModelList[0]=this.journeyIpModel;
     this.proceedIpModel.journeyInputModel=this.journeyInputModelList;
-    console.log(JSON.stringify(this.proceedIpModel).replace(/[_]/g, "") + " ------->1");
+    console.log(JSON.stringify(this.proceedIpModel));
     this.flightservice.proceedWithFlight(JSON.parse(JSON.stringify(this.proceedIpModel).replace(/[_]/g, ""))).subscribe({
       next: (res: BookingHeader[]) => {
         console.log(res);
@@ -168,9 +168,12 @@ export class FlightSearchComponent implements OnInit {
     })
   }
 
+  getInbox(){
+
+    this.router.navigate(["inbox",this.userId]);
 
 
-
+  }
 
 
 

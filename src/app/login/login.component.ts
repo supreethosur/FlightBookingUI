@@ -1,6 +1,7 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from '@angular/router';
+import { adminModel } from './Models/adminModel';
 import { userModel } from './Models/userModel';
 import { UserService } from './Service/UserService';
 @Component({
@@ -75,6 +76,19 @@ export class LoginComponent implements OnInit {
   getAdminLogin(adminId: String, password: String) {
     this.adminId = adminId;
     this.password = password;
+    let admin = new adminModel(adminId,password);
+    this.userDetails.adminLogin(admin).subscribe({
+      next: (res: any) => {
+        console.log("inside ajax call");
+        console.log(res);
+      },
+      error: (err) => {
+        console.log("unauthorised")
+        console.log(err)
+      }
+    })
+
+    this.router.navigate(["admin", ""]);
     console.log(adminId);
     console.log(password);
   }

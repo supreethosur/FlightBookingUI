@@ -22,11 +22,6 @@
         <div class="fromLocation">
             <label for="fromLocation">From location </label><br>
             <input type="text" id="fromLocation" #fromLocation  formControlName="fromLocation">
-            <!-- <select  type="text" id="fromLocation" #fromLocation (change)="getCity(fromLocation.value)" formControlName="fromLocation">
-                <option *ngFor="let city of cities" [value]="city">
-                    {{city}}
-                </option>
-            </select> -->
         </div>
         <div class="toLocation">
             <label for="toLocation">To Location</label><br>
@@ -47,7 +42,9 @@
 
 </section>
 
-
+<section class="inbox">
+<button (click)="getInbox()"> Inbox </button>
+</section>
 
 <body>
     <form (submit)="proceedforBooking()" [formGroup]="ListFlightsForm">
@@ -94,16 +91,5 @@
 
 </body>
 
-
-
-<!-- <table>
-    <tr ng-repeat="company in companies">
-       <td>
-         <input type="radio" ng-model="companyId" name="companyId" value="{{company.id}}" />{{company.name}}
-        </td>
-    </tr>
-  </table>
-  
-  <button ng-disabled="!companyId">Continue</button> -->
 
 </html>
