@@ -21,12 +21,13 @@
         </span>
         <br/>
        
-        <button    [disabled] ="loginForm.invalid">Register & Continue</button>
+        <button    [disabled] ="loginForm.invalid">Register/Login</button>
     </form>
 
 
     <form class="login" id="loginAdmin" [formGroup]="adminloginForm" (submit)="getAdminLogin(adminId.value,password.value)">
         <h2>Admin </h2>
+        <span *ngIf="unAuthorisedError" class="unAuthorisedError">Invalid UserName or Password<br/></span>
         <label for="adminId"> Admin Id</label><br>
         <input type="text" id ="adminId" #adminId  formControlName="adminId"/>
         <span class="error" *ngIf="adminloginForm.controls['adminId'].dirty && !!adminloginForm.controls['adminId'].errors">

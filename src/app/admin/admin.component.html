@@ -57,8 +57,8 @@ crossorigin="anonymous">   -->
         <div class="pure-control-group">
             <label for="scheduleType">Schedule Type</label><br>
             <select id="scheduleType" #scheduleType formControlName="scheduleType">
-                <option *ngFor="let type of schedule_Type" [value]="scheduleType">
-                    {{type}}
+                <option *ngFor="let scheduleType of schedule_Type" [value]="scheduleType">
+                    {{scheduleType}}
                 </option>
             </select>
         </div>

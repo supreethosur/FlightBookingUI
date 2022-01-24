@@ -5,9 +5,8 @@
 <html>
 
 <section class="HeaderSearch">
-
-    <div class="column" id="logo">
-        <img src="..\..\Images\logo.jpg">
+    <div class="column" id="logo" >
+         <!-- <img src="./../../assets/Images/logo.jpg">  -->
     </div>
     <form class="column" [formGroup]="searchForm" id="searchFields"
         (submit)="getFlights(tripType.value,fromLocation.value,toLocation.value,fromDate.value,returnDate.value)">
@@ -45,7 +44,7 @@
 <section class="inbox">
 <button (click)="getInbox()"> Inbox </button>
 </section>
-
+<span class="nodataAvailable" *ngIf="!dataAvailable" >No Data Available<br/></span>
 <body>
     <form (submit)="proceedforBooking()" [formGroup]="ListFlightsForm">
     <!-- <form > -->
@@ -66,22 +65,23 @@
                 <span> To </span><br>
                 {{flight.toLocation}}
             </div>
-            <div class="flightData" id="arrivalTime">
-                <span> Arrival Time </span><br>
-                {{flight.arrivalTime}}
+            <div class="flightData" id="departureDate">
+                <span> Departure Date </span><br>
+                {{flight.departureDate}}
             </div>
             <div class="flightData" id="departureTime">
                 <span> Departure Time </span><br>
                 {{flight.departureTime}}
             </div>
-            <div class="flightData" id="departureDate">
-                <span> Departure Date </span><br>
-                {{flight.departureDate}}
-            </div>
             <div class="flightData" id="arrivalDate">
                 <span> Arrival Date </span><br>
                 {{flight.arrivalDate}}
             </div>
+            <div class="flightData" id="arrivalTime">
+                <span> Arrival Time </span><br>
+                {{flight.arrivalTime}}
+            </div>
+            
             <input type="radio" [value]="flight.journeyId" #journeyId  name = "journeyId"(change)= "change(journeyId.value,flight.departureDate)" >
         </div>
         <button  class="Proceed" *ngIf="flightList.length!=0" >Proceed</button>

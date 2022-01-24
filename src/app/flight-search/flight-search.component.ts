@@ -35,6 +35,7 @@ export class FlightSearchComponent implements OnInit {
   flightList: FlightModel[]  = [];
   flightsOutPut: Map<string, FlightModel[]>;
   bookingHeaderList: BookingHeader[] = [];
+  dataAvailable: boolean=true;
 
   constructor(private activatedRoute: ActivatedRoute,
     private router: Router,
@@ -109,8 +110,13 @@ export class FlightSearchComponent implements OnInit {
         this.flightsOutPut = res;
         // let temp: FlightModel[] |undefined =;
         console.log(res['1']);
-         
-        this.flightList = res['1'];//this.flightsOutPut.get("1");
+        this.flightList = res['1'];
+        this.dataAvailable=true;
+        
+        if(this.flightList.length==0){
+          console.log("empty");
+          this.dataAvailable=false;
+        }
       }
     })
     console.log("service op after" + this.flightsOutPut);

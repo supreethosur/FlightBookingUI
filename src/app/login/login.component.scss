@@ -10,7 +10,7 @@ body {
     position:fixed; 
     height:100%; 
     width:100%;
-    background-color:rgb(96, 95, 99);
+    background-color:rgb(78, 130, 146);
     margin: 0%;
  
 }
@@ -54,4 +54,8 @@ h1{
     color: red;
     position: relative;
     
+}
+
+.unAuthorisedError{
+    color: red;
 }

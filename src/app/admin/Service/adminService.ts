@@ -8,12 +8,13 @@ import { Observable } from "rxjs";
 
 @Injectable({"providedIn": "root"})
 export class adminService{
-    
+  token:string|null = null;
   constructor(private http:HttpClient){}
-
+  
 
     addNewFlight(flightModel: FlightModel) :Observable<FlightModel>{
-      return this.http.post<FlightModel>("http://localhost:8084/addFlights", flightModel);
+      this.token = localStorage.getItem("token");
+      return this.http.post<FlightModel>("http://localhost:8084/addFlights", flightModel, {headers: {"Authorization": "Bearer "+this.token}});
     }
 
     getFlights(flightName:String) : Observable<FlightModel[]>{
@@ -21,6 +22,7 @@ export class adminService{
     }
 
     deleteFlight(flightId:Number){
-      return this.http.delete("http://localhost:8082/deleteFlight/"+flightId);
+      this.token = localStorage.getItem("token");
+      return this.http.delete("http://localhost:8084/deleteFlight/"+flightId, {headers: {"Authorization": "Bearer "+this.token}});
   }
 }

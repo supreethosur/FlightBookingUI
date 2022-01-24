@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   adminId: String = "";
   password: String = "";
   userModelop : userModel ;
+  unAuthorisedError:boolean=false;
  
   // private router: Router=new Router();
   // constructor (private router: Router){
@@ -77,18 +78,21 @@ export class LoginComponent implements OnInit {
     this.adminId = adminId;
     this.password = password;
     let admin = new adminModel(adminId,password);
+    console.log(JSON.stringify(admin));
     this.userDetails.adminLogin(admin).subscribe({
       next: (res: any) => {
-        console.log("inside ajax call");
-        console.log(res);
+        console.log(res['token']);
+        this.router.navigate(["admin", ""]);
+        localStorage.setItem("token", res['token']);
       },
       error: (err) => {
         console.log("unauthorised")
+        this.unAuthorisedError=true;
         console.log(err)
       }
     })
 
-    this.router.navigate(["admin", ""]);
+    
     console.log(adminId);
     console.log(password);
   }

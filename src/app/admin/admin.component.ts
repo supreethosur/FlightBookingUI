@@ -13,6 +13,7 @@ export class AdminComponent implements OnInit {
   addFlight: FormGroup;
   isFormRequired: Number =0;
   flightModel:FlightModel;
+  token:string|null = null;
   constructor(private adminservice:adminService) { 
     this.searchFlightsForm = new FormGroup({
       searchbar: new FormControl("", [
@@ -30,6 +31,8 @@ export class AdminComponent implements OnInit {
       // ]),
       departureTime: new FormControl("", [
       ]),
+      arrivalTime: new FormControl("", [
+      ]),
       arrivalDate: new FormControl("", [
       ]),
       fromLocation: new FormControl("", [
@@ -46,6 +49,7 @@ export class AdminComponent implements OnInit {
       ])
     })
     this.getFlights("");
+    this.token = localStorage.getItem("token");
   }
   flightsList:  FlightModel[];
   ngOnInit(): void {
@@ -63,20 +67,12 @@ export class AdminComponent implements OnInit {
     departureTime:String,arrivalDate:String,arrivalTime:String,fromLocation:String,
     toLocation:String,businessSeats:String,
     nonBusinessSeats:String,scheduleType:String,amount:String){
-
+    console.log(JSON.stringify(scheduleType))
     this.flightModel=new FlightModel(airline,fromLocation,toLocation ,flightName  ,0 
-      ,departureDate,departureTime,arrivalDate,arrivalTime,Number(businessSeats),
+      ,departureDate,departureTime+".00",arrivalDate,arrivalTime+".00",Number(businessSeats),
       Number(nonBusinessSeats),Number(amount),scheduleType);
-    // if(scheduleType==="Week-Ends"){
-    // this.flightModel.scheduleType="WE"
-    // }
-    // else if(scheduleType==="Week-Days"){
-    //   this.flightModel.scheduleType="WD"
-    // }
-    // else{
-    //   this.flightModel.scheduleType="D"
-    // }
-
+    console.log("inside service")
+    console.log(JSON.stringify(this.flightModel))
     this.adminservice.addNewFlight(this.flightModel).subscribe({
       next: (res: FlightModel) => {
         console.log(res);

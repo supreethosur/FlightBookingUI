@@ -1,6 +1,6 @@
 export class adminModel{
     constructor(
-      public adminId:String,
+      public username:String,
       public password:String
     ){}
   } 

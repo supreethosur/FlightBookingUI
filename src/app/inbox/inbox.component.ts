@@ -15,6 +15,8 @@ export class InboxComponent implements OnInit {
 userId: Number=0;
 historyModel :HistoryModel[]=[]
 searchBarForm :FormGroup;
+dataAvailable: boolean=true;
+
   constructor(private activatedRoute: ActivatedRoute,private inboxservice:inboxService) { 
     this.searchBarForm = new FormGroup({
       searchByPNRbar: new FormControl("", [
@@ -37,6 +39,10 @@ searchBarForm :FormGroup;
         this.historyModel = res;
         console.log(JSON.stringify(res))
         console.log(JSON.stringify(this.historyModel))
+        this.dataAvailable=true;
+        if(this.historyModel==null){
+          this.dataAvailable=false;
+        }
       }
     })
 

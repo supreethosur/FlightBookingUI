@@ -7,8 +7,13 @@ import { adminModel } from "../Models/adminModel";
 
 @Injectable({"providedIn": "root"})
 export class UserService{
+
+
     adminLogin(admin: adminModel) {
-        return this.http.post("localhost:8084/authenticate", admin);
+        console.log(admin)
+        // let headers ={'Access-Control-Allow-Origin': '*'}
+        // res.set('Access-Control-Allow-Origin', 'http://localhost:8000');
+        return this.http.post("http://localhost:8084/authenticate", admin);
     }
 
 
