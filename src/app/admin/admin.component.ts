@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { FlightModel } from '../flight-search/FlightModel';
+import { FlightModel } from '../flight-search/Models/FlightModel';
+
 import { adminService } from './Service/adminService';
 
 @Component({

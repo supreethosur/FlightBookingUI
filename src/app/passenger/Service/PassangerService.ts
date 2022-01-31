@@ -20,21 +20,25 @@ export class PassangerService{
 
     savePassangerDetails(passengerModel :PassangerModel):Observable<TicketDetailsModel> {
         console.log(JSON.stringify(passengerModel))
-        return this.http.post<TicketDetailsModel>("http://localhost:8081/addPassanger",passengerModel);
+        // return this.http.post<TicketDetailsModel>("http://localhost:8081/addPassanger",passengerModel);
+        return this.http.post<TicketDetailsModel>("http://localhost:8085/FlightBooking/addPassanger",passengerModel);
     }
 
 
     getSummary(pnr:Number):Observable<SummaryModel>{
-        return this.http.get<SummaryModel>("http://localhost:8081/getSummary?pnrNumber="+pnr);
+        // return this.http.get<SummaryModel>("http://localhost:8081/getSummary?pnrNumber="+pnr);
+        return this.http.get<SummaryModel>("http://localhost:8085/FlightBooking/getSummary?pnrNumber="+pnr);
     }
 
     deleteTicket(ticketno:Number) {
         
-        return this.http.post("http://localhost:8081/deletePassanger?ticketNo="+ticketno,null);
+        // return this.http.post("http://localhost:8081/deletePassanger?ticketNo="+ticketno,null);
+        return this.http.post("http://localhost:8085/FlightBooking/deletePassanger?ticketNo="+ticketno,null);
     }
     finalSubmission(pnrList:Number[]):Observable<BookingHeader[]> {
         
-        return this.http.post<BookingHeader[]>("http://localhost:8081/finalSubmission",pnrList);
+        // return this.http.post<BookingHeader[]>("http://localhost:8081/finalSubmission",pnrList);
+        return this.http.post<BookingHeader[]>("http://localhost:8085/FlightBooking/finalSubmission",pnrList);
     }
 
 }

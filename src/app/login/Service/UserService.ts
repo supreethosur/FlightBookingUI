@@ -11,19 +11,19 @@ export class UserService{
 
     adminLogin(admin: adminModel) {
         console.log(admin)
-        // let headers ={'Access-Control-Allow-Origin': '*'}
-        // res.set('Access-Control-Allow-Origin', 'http://localhost:8000');
-        return this.http.post("http://localhost:8084/authenticate", admin);
+        // return this.http.post("http://localhost:8084/authenticate", admin);
+        return this.http.post("http://localhost:8085/Admin/authenticate", admin);
+        
     }
 
 
     constructor(private http:HttpClient){}
 
     addUser(user:userModel) :Observable<userModel>{
-        return this.http.post<userModel>("http://localhost:8081/addUser", user);
+        // return this.http.post<userModel>("http://localhost:8081/addUser", user);
+        return this.http.post<userModel>("http://localhost:8085/FlightBooking/addUser", user);
 
-        // let token = localStorage.getItem("token")
-        // return this.http.post("http://localhost:8080/api/v1/movies", movie, {headers: {"Authorization": "bearer "+token}});
+        
     }
 
 }

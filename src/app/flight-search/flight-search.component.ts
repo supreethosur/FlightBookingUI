@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FlightModel } from './FlightModel';
+import { FlightModel } from './Models/FlightModel';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { FlightSearchService } from './Service/FlightSearchService';
@@ -21,7 +21,7 @@ export class FlightSearchComponent implements OnInit {
   searchForm: FormGroup;
   ListFlightsForm: FormGroup;
   tripType: String = "";
-  fromLocation: String = "";
+  fromLocation: String = ""; 
   toLocation: String = "";
   startDate: String = "";
   returnDate: String = "";

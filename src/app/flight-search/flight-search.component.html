@@ -3,10 +3,10 @@
 
 
 <html>
-
+<body>
 <section class="HeaderSearch">
     <div class="column" id="logo" >
-         <!-- <img src="./../../assets/Images/logo.jpg">  -->
+        <!-- <img src="./../../assets/Images/logo.jpg">  -->
     </div>
     <form class="column" [formGroup]="searchForm" id="searchFields"
         (submit)="getFlights(tripType.value,fromLocation.value,toLocation.value,fromDate.value,returnDate.value)">
@@ -45,7 +45,7 @@
 <button (click)="getInbox()"> Inbox </button>
 </section>
 <span class="nodataAvailable" *ngIf="!dataAvailable" >No Data Available<br/></span>
-<body>
+<!-- <body> -->
     <form (submit)="proceedforBooking()" [formGroup]="ListFlightsForm">
     <!-- <form > -->
         <div *ngFor="let flight of flightList" class="listingCard">

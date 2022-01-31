@@ -12,7 +12,7 @@ export class inboxService{
 
     getFlightsBookedByPnr(emailOrPNR :String) :Observable<HistoryModel[]>{
        
-        return this.http.get<HistoryModel[]>("http://localhost:8081/getHistoryByemailId?emailId="+ emailOrPNR);
+        return this.http.get<HistoryModel[]>("http://localhost:8085/FlightBooking/getHistoryByemailId?emailId="+ emailOrPNR);
     }
 
 }
